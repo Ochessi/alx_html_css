@@ -1,0 +1,141 @@
+/* ==== RESET ==== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Source Sans Pro", sans-serif; background: #fff; color: #fff; }
+
+/* ==== VARIABLES ==== */
+:root {
+  --primary-color: #FF6565;
+  --max-width: 1000px;
+  --header-height: 60px;
+}
+
+/* ==== HEADER ==== */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a:active {
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ==== HERO ==== */
+.hero {
+  position: relative;
+  background: url('/home/ochessi/alx_html_css/headphones/img/headphones_hero_1.jpg') center/cover no-repeat;
+  padding-top: var(--header-height);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 8rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.cta-btn:hover,
+.cta-btn:active {
+  opacity: 0.9;
+}
+
+.hero-text {
+  margin-top: 5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0,0,0,0.9);
+    padding: 2rem;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
